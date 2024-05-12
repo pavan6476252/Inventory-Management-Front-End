@@ -13,7 +13,7 @@ function ManageUserTableRow({ user, role }) {
         `${SERVER_URL}/api/v1/users/chage-role`,
         {
           targetUserId: user._id,
-          role: userRole,
+          role: userRole==="user" ? "admin":"user",
         },
         {
           withCredentials: "include",
@@ -22,6 +22,8 @@ function ManageUserTableRow({ user, role }) {
           },
         }
       );
+      console.log(userRole)
+      setUserRole((s) => (s === "admin" ? "user" : "admin"));
     } catch (e) {
       console.log(e);
       setUserRole((s) => (s === "admin" ? "user" : "admin"));
@@ -30,7 +32,7 @@ function ManageUserTableRow({ user, role }) {
     }
   }
   async function changeRole() {
-    setUserRole((s) => (s === "admin" ? "user" : "admin"));
+   // setUserRole((s) => (s === "admin" ? "user" : "admin"));
     await changeRoleAPicall();
   }
   return (
