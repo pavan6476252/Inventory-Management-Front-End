@@ -81,17 +81,12 @@ function WarrantyExpiringProductsTablesComponent({ uid }) {
                     {item.warrantyMonths} / {item.dateOfPurchase.split("T")[0]}
                   </td>
                   <td className="px-5 py-5 border-b border-white text-sm">
-                    {item.status}
+                    {item.history[0].status[0].name}
                   </td>
                   <td className="px-5 py-5 border-b border-white text-sm">
-                    <Link to={`/product/${item._id}`} className="text-blue-500 hover:underline mr-2">
+                    <Link to={`/products/history/${item._id}`} className="text-blue-500 hover:underline mr-2">
                       View
                     </Link>
-                    {uid === item.createdBy && (
-                      <Link to={`/product/${item._id}/edit`} className="text-blue-500 hover:underline">
-                        Edit
-                      </Link>
-                    )}
                   </td>
                 </tr>
               ))}
