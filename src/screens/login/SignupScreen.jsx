@@ -20,6 +20,7 @@ function SignupScreen() {
 
   async function handleSignIN(e) {
     e.preventDefault();
+    console.log(`${SERVER_URL}/api/v1/users/new`);
     try {
       const { data, status } = await axios.post(
         `${SERVER_URL}/api/v1/users/new`,

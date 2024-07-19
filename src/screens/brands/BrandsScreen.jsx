@@ -47,7 +47,7 @@ function BrandsScreen() {
       )}
 
       {data && (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-4 md:grid-cols-2">
           {data.map((location) => (
             <div className=" col-span-1">
               <LoactionCard data={location} />

@@ -1,23 +1,24 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import { FaBlog, FaSleigh } from "react-icons/fa";
+import { FaBlog, FaSleigh, FaTools } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { AiFillProduct } from "react-icons/ai";
 
 import { LuShoppingBag } from "react-icons/lu";
 import { MdCategory } from "react-icons/md";
 import { SiBrandfolder } from "react-icons/si";
-import { BsCollectionFill } from "react-icons/bs";
+import { BsCollectionFill, BsTools } from "react-icons/bs";
 
-import { FcAdvertising } from "react-icons/fc";
-import { RiCoupon2Fill } from "react-icons/ri";
+import { FcAdvertising, FcDepartment, FcExpired, FcReuse } from "react-icons/fc";
+import { RiAdminFill, RiCoupon2Fill } from "react-icons/ri";
 
 import { IoIosSettings } from "react-icons/io";
 import { FcRatings } from "react-icons/fc";
 import { FaUserAlt } from "react-icons/fa";
 import { BiCart, BiLocationPlus, BiUser } from "react-icons/bi";
 import LogoutButton from "./LogoutButton";
+import { IoCodeWorking } from "react-icons/io5";
 
 function SideNavbar() {
   const quickLinks = {
@@ -63,8 +64,24 @@ function SideNavbar() {
       { link: "/users", name: "User Management", icon: <BiUser />, end: false },
     ],
   };
+  const DetailsLinks = {
+    title: "Histroy",
+    links: [
+      
+      { link: "/used-by-admin", name: "Used By Admin", icon: <RiAdminFill />, end: true },
+      { link: "/used-by-department", name: "Used By Department", icon: <FcDepartment />, end: true },
+      { link: "/used-by-normal-user", name: "Used By Normal User", icon: <FcReuse />, end: true },
 
-  const links = [quickLinks, catalogLinks];
+      { link: "/inwarranty", name: "In Warranty", icon: <FcExpired />, end: true },
+      { link: "/notwarranty", name: "Not-In Warranty", icon: <FcExpired />, end: true },
+
+      { link: "/in-repair", name: "In Repair", icon: <BsTools />, end: true },
+      { link: "/not-in-use", name: "Not-In Repair", icon: <FaTools />, end: true },
+      { link: "/in-use", name: "In Use", icon: <IoCodeWorking />, end: true },
+    ],
+  };
+
+  const links = [quickLinks, catalogLinks,DetailsLinks];
   return (
     <div className="h-full flex flex-col pr-1 overflow-y-scroll  scrollbar scroll-smooth ">
       {links.map((link, index) => (
@@ -93,6 +110,8 @@ function SideNavbar() {
           </div>
         </div>
       ))}
+     <hr />
+      
 
       <LogoutButton />
     </div>

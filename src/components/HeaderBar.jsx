@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import adminLogo from "../assets/admin-logo.svg";
 import userLogo from "../assets/user-logo.svg";
 import axios from "axios";
-
+import logo from '../assets/image.png'
 function HeaderBar({ user }) {
   const [showMenu, setShowMenu] = useState(false);
   const navigator = useNavigate();
@@ -28,7 +28,9 @@ function HeaderBar({ user }) {
             <h1 className="text-xl font-semibold col-span-2">
               Inventory Management
             </h1>
-            <div className="col-span-6"></div>
+            <div className="col-span-6 ">
+              <img src={logo} alt="" srcset=""  className="h-14 sm:hidden md:block mx-auto"/>
+            </div>
             <div className="col-span-2 flex items-center justify-end">
               <div className="flex items-center">
                 <img

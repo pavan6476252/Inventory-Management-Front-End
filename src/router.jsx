@@ -19,6 +19,14 @@ import NewBrandsScreen from "./screens/brands/NewBrandsScreen";
 import EditBrandsScreen from "./screens/brands/EditBrandsScreen";
 import UserManagementScreen from "./screens/users/UserManagementScreen";
 import ProductHistoryScreen from "./screens/product/ProductHistoryScreen";
+import InWarrantyProductsScreen from "./screens/Inwarranty/InWarrantyProductsScreen";
+import NotInWarrantyProductsScreen from "./screens/Inwarranty/NotWarrantyProductsScreen";
+import UsedByAdminProductsScreen from "./screens/Inwarranty/UsedByAdminProductsScreen";
+import UsedByDepartmentProductsScreen from "./screens/Inwarranty/UsedByDepartmentProductsScreen copy";
+import InRepairProductsScreen from "./screens/Inwarranty/InRepairProductsScreen";
+import InUseProductsScreen from "./screens/Inwarranty/InUseProductsScreen";
+import NotInUseProductsScreen from "./screens/Inwarranty/NotInUseProductsScreen";
+import UsedByNormalUserProductsScreen from "./screens/Inwarranty/UsedByNormalUserProductsScreen";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +63,17 @@ const router = createBrowserRouter([
       { path: "/products/edit/:id", element: <ProductEditScreen /> },
       { path: "/products/history/:id", element: <ProductHistoryScreen /> },
 
+      { path: "/inwarranty", element: <InWarrantyProductsScreen /> },
+      { path: "/notwarranty", element: <NotInWarrantyProductsScreen /> },
+
+      { path: "/used-by-admin", element: <UsedByAdminProductsScreen /> },
+      { path: "/used-by-department", element: <UsedByDepartmentProductsScreen /> },
+      { path: "/used-by-normal-user", element: <UsedByNormalUserProductsScreen /> },
+
+      { path: "/in-repair", element: <InRepairProductsScreen /> },
+      { path: "/not-in-use", element: <NotInUseProductsScreen /> },
+      { path: "/in-use", element: <InUseProductsScreen /> },
+      
       //  brands
 
       {
