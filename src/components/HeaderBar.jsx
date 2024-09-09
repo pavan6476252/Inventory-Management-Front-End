@@ -28,9 +28,7 @@ function HeaderBar({ user }) {
             <h1 className="text-xl font-semibold col-span-2">
               Inventory Management
             </h1>
-            <div className="col-span-6 ">
-              <img src={logo} alt="" srcset=""  className="h-14 sm:hidden md:block mx-auto"/>
-            </div>
+           
             <div className="col-span-2 flex items-center justify-end">
               <div className="flex items-center">
                 <img
